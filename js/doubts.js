@@ -12,4 +12,4 @@
 //     },3000)
 //     a++;
 // }
-// x();
+// x(); --> the callback function points to the reference of 'a', not its value, so it prints 1, not 0
