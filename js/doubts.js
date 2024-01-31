@@ -13,3 +13,13 @@
 //     a++;
 // }
 // x(); --> the callback function points to the reference of 'a', not its value, so it prints 1, not 0
+
+const users = [
+    {firstName:"poorvi", lastName:"nayak", age:20},
+    {firstName:"aditi", lastName:"bhoomireddy", age:31},
+    {firstName:"rithika", lastName:"bhat", age:22},
+];
+
+const output = users.filter((x)=>x.age<30).map((x)=>x.firstName);
+
+console.log(output);
