@@ -14,16 +14,28 @@
 // }
 // x(); --> the callback function points to the reference of 'a', not its value, so it prints 1, not 0
 
-const users = [
-    {firstName:"poorvi", lastName:"nayak", age:20},
-    {firstName:"aditi", lastName:"bhoomireddy", age:31},
-    {firstName:"rithika", lastName:"bhat", age:22},
-];
+// const users = [
+//     {firstName:"poorvi", lastName:"nayak", age:20},
+//     {firstName:"aditi", lastName:"bhoomireddy", age:31},
+//     {firstName:"rithika", lastName:"bhat", age:22},
+// ];
 
-const output = users.reduce(function(acc,curr){
-    if(curr.age<30)
-        acc.push(curr.firstName);
-    return acc;
-},[]);
+// const output = users.reduce(function(acc,curr){
+//     if(curr.age<30)
+//         acc.push(curr.firstName);
+//     return acc;
+// },[]);
 
-console.log(output);
+// console.log(output);
+
+// function x(y)
+// {
+//     y(5);
+// };
+
+// x(function y(a){
+//     console.log(++a);
+// });
+
+// y(6); --> Uncaught reference error, y is not defined, because y is defined in the execution context of x only,
+// and not in the global scope
