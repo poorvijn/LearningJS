@@ -39,3 +39,9 @@
 
 // y(6); --> Uncaught reference error, y is not defined, because y is defined in the execution context of x only,
 // and not in the global scope
+
+// const GITHUB_API = "https://api.github.com/users/";
+
+// user = fetch(GITHUB_API);
+// console.log(user);
+// console.log("Entered here"); --> JS does not wait for the promise to be fulfilled and executes this statement
