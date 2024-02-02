@@ -41,7 +41,12 @@
 // and not in the global scope
 
 // const GITHUB_API = "https://api.github.com/users/";
-
 // user = fetch(GITHUB_API);
 // console.log(user);
-// console.log("Entered here"); --> JS does not wait for the promise to be fulfilled and executes this statement
+// user.then(function (){
+//     console.log("Promise resolved");
+// })
+// console.log("Entered here");  --> JS does not wait for the promise to be fulfilled and 
+// executes this statement and then once the promise is resolved, it executes the statement within the function
+// mentioned in the promise
+
