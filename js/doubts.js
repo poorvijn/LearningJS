@@ -50,3 +50,23 @@
 // executes this statement and then once the promise is resolved, it executes the statement within the function
 // mentioned in the promise
 
+
+const radius  = [1,2,3,4];
+const area = function(radius){
+    return Math.PI*radius*radius;
+}
+const diameter = function(radius){
+    return 2*radius;
+}
+const circumference = function(radius){
+    return 2*Math.PI*radius;
+}
+
+Array.prototype.calculate = function(logic){
+    const output=[];
+    for(let i=0;i<radius.length;i++)
+        output.push(logic(radius[i]));
+    return output;
+}
+
+console.log(radius.calculate(area));
