@@ -51,22 +51,97 @@
 // mentioned in the promise
 
 
-const radius  = [1,2,3,4];
-const area = function(radius){
-    return Math.PI*radius*radius;
-}
-const diameter = function(radius){
-    return 2*radius;
-}
-const circumference = function(radius){
-    return 2*Math.PI*radius;
+// const radius  = [1,2,3,4];
+// const area = function(radius){
+//     return Math.PI*radius*radius;
+// }
+// const diameter = function(radius){
+//     return 2*radius;
+// }
+// const circumference = function(radius){
+//     return 2*Math.PI*radius;
+// }
+
+// Array.prototype.calculate = function(logic){
+//     const output=[];
+//     for(let i=0;i<radius.length;i++)
+//         output.push(logic(radius[i]));
+//     return output;
+// }
+
+// console.log(radius.calculate(area));
+
+const cart = ["pants","tops","kurta"];
+
+createOrder(cart)
+.then(function(orderId){
+    console.log(orderId);
+    return orderId;
+})
+.then(function(orderId){
+    return proceedToPayment(orderId);
+})
+.then(function(paymentInfo){
+    console.log(paymentInfo);
+    return paymentInfo;
+})
+.then(function(paymentInfo){
+    return showOrderSummary(paymentInfo);
+})
+.then(function(orderSummary){
+    console.log(orderSummary);
+    return orderSummary;
+})
+.then(function(orderSummary){
+    return updateWallet(orderSummary);
+})
+.then(function(updatedWallet){
+    console.log(updatedWallet);
+})
+.catch(function(error){
+    console.log(error);
+});
+
+function createOrder(cart){
+    return new Promise(function(resolve,reject){
+        if(!validateCart()){
+            const error = "Cart invalid";
+            reject(error);
+        }
+        orderId="12345";
+        resolve(orderId);
+    });
+};
+
+function validateCart(){
+    return true;
 }
 
-Array.prototype.calculate = function(logic){
-    const output=[];
-    for(let i=0;i<radius.length;i++)
-        output.push(logic(radius[i]));
-    return output;
+function proceedToPayment(orderId){
+    return new Promise(function(resolve,reject){
+        if(!paymentCorrect()){
+            const error = "Payment unsuccessful";
+            reject(error);
+        }
+        const paymentInfo="54321";
+        resolve(paymentInfo);
+    });
+};
+
+function paymentCorrect(){
+    return false;
 }
 
-console.log(radius.calculate(area));
+function showOrderSummary(paymentInfo){
+    return new Promise(function(resolve,reject){
+        const orderSummary="1233445";
+        resolve(orderSummary);
+    });
+};
+
+function updateWallet(orderSummary){
+    return new Promise(function(resolve,reject){
+        const updatedWallet = "5443321";
+        resolve(updatedWallet);
+    });
+};
