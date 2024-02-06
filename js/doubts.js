@@ -147,18 +147,31 @@
 // };
 
 
-const p = new Promise((resolve,reject)=>{
-    setTimeout(resolve("Resolved promise"),6000);
-});
+// const p1 = new Promise((resolve,reject)=>{
+//     setTimeout(reject("Rejected p1"),5000);
+// });
 
-function printA(){
-    console.log("Printing here");
-}
+// const p2 = new Promise((resolve,reject)=>{
+//     setTimeout(resolve("Resolved p2",3000));
+// });
 
-async function waitA(){
-    const r = await p;
-    console.log(r);
-}
+// function printA(){
+//     console.log("Printing here");
+// }
 
-waitA();
-printA();
+// async function waitA(){
+//     try{
+//         const r1 = await p1;
+//         console.log(r1," in waitA");
+//         const r2 = await p2;
+//         console.log(r2);
+//     }
+//     catch(error){
+//         console.log(error);
+//     }
+// } --> if the first promise is rejected, the error is caught and the function does not wait for the other
+        // promises or does not proceed with execution once the first promise is rejected. Basically, once
+        // a promise is rejected, its error is caught in the catch block and the function stops execution
+
+// waitA();
+// printA(); --> when waitA() is suspended to settle the promise, this function enters callstack and executes
