@@ -71,77 +71,94 @@
 
 // console.log(radius.calculate(area));
 
-const cart = ["pants","tops","kurta"];
+// const cart = ["pants","tops","kurta"];
 
-createOrder(cart)
-.then(function(orderId){
-    console.log(orderId);
-    return orderId;
-})
-.then(function(orderId){
-    return proceedToPayment(orderId);
-})
-.then(function(paymentInfo){
-    console.log(paymentInfo);
-    return paymentInfo;
-})
-.then(function(paymentInfo){
-    return showOrderSummary(paymentInfo);
-})
-.then(function(orderSummary){
-    console.log(orderSummary);
-    return orderSummary;
-})
-.then(function(orderSummary){
-    return updateWallet(orderSummary);
-})
-.then(function(updatedWallet){
-    console.log(updatedWallet);
-})
-.catch(function(error){
-    console.log(error);
+// createOrder(cart)
+// .then(function(orderId){
+//     console.log(orderId);
+//     return orderId;
+// })
+// .then(function(orderId){
+//     return proceedToPayment(orderId);
+// })
+// .then(function(paymentInfo){
+//     console.log(paymentInfo);
+//     return paymentInfo;
+// })
+// .then(function(paymentInfo){
+//     return showOrderSummary(paymentInfo);
+// })
+// .then(function(orderSummary){
+//     console.log(orderSummary);
+//     return orderSummary;
+// })
+// .then(function(orderSummary){
+//     return updateWallet(orderSummary);
+// })
+// .then(function(updatedWallet){
+//     console.log(updatedWallet);
+// })
+// .catch(function(error){
+//     console.log(error);
+// });
+
+// function createOrder(cart){
+//     return new Promise(function(resolve,reject){
+//         if(!validateCart()){
+//             const error = "Cart invalid";
+//             reject(error);
+//         }
+//         orderId="12345";
+//         resolve(orderId);
+//     });
+// };
+
+// function validateCart(){
+//     return true;
+// }
+
+// function proceedToPayment(orderId){
+//     return new Promise(function(resolve,reject){
+//         if(!paymentCorrect()){
+//             const error = "Payment unsuccessful";
+//             reject(error);
+//         }
+//         const paymentInfo="54321";
+//         resolve(paymentInfo);
+//     });
+// };
+
+// function paymentCorrect(){
+//     return false;
+// }
+
+// function showOrderSummary(paymentInfo){
+//     return new Promise(function(resolve,reject){
+//         const orderSummary="1233445";
+//         resolve(orderSummary);
+//     });
+// };
+
+// function updateWallet(orderSummary){
+//     return new Promise(function(resolve,reject){
+//         const updatedWallet = "5443321";
+//         resolve(updatedWallet);
+//     });
+// };
+
+
+const p = new Promise((resolve,reject)=>{
+    setTimeout(resolve("Resolved promise"),6000);
 });
 
-function createOrder(cart){
-    return new Promise(function(resolve,reject){
-        if(!validateCart()){
-            const error = "Cart invalid";
-            reject(error);
-        }
-        orderId="12345";
-        resolve(orderId);
-    });
-};
-
-function validateCart(){
-    return true;
+function printA(){
+    console.log("Printing here");
 }
 
-function proceedToPayment(orderId){
-    return new Promise(function(resolve,reject){
-        if(!paymentCorrect()){
-            const error = "Payment unsuccessful";
-            reject(error);
-        }
-        const paymentInfo="54321";
-        resolve(paymentInfo);
-    });
-};
-
-function paymentCorrect(){
-    return false;
+async function waitA(){
+    const r = await p;
+    console.log(r);
 }
 
-function showOrderSummary(paymentInfo){
-    return new Promise(function(resolve,reject){
-        const orderSummary="1233445";
-        resolve(orderSummary);
-    });
-};
-
-function updateWallet(orderSummary){
-    return new Promise(function(resolve,reject){
-        const updatedWallet = "5443321";
-        resolve(updatedWallet);
-    });
-};
+waitA();
+printA();
