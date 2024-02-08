@@ -175,3 +175,8 @@
 
 // waitA();
 // printA(); --> when waitA() is suspended to settle the promise, this function enters callstack and executes
+
+// names1 = ["poorvi","Poorvi"];
+// console.log(names1.sort()); --> in this case, capital comes before small
+// names2 = ["A","a"];
+// console.log(names2.sort()); --> same as above, no change in array since capital is already preceding small
