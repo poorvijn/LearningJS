@@ -180,3 +180,9 @@
 // console.log(names1.sort()); --> in this case, capital comes before small
 // names2 = ["A","a"];
 // console.log(names2.sort()); --> same as above, no change in array since capital is already preceding small
+
+// const myArray = ['A','B','C','D','E','F','G'];
+// const newArray = myArray.slice(2,5);
+// console.log(newArray); --> slice(index1,index2) --> removes elements from 0 till index1-1, keeps elements from
+// index1 till index2-1, then removes elements from index2 till last index. If index2 not mentioned, like
+// slice(2), only removes elements till index1-1.
