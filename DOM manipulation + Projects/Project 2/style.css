@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Lato','sans-serif';
+}
+
+body{
+    background: url(img/trees.jpg) no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+}
+
+#open-btn{
+    position: absolute;
+    top:70%;
+    left:30%;
+    width:350px;
+    height:80px;
+    font-size:2rem;
+    background:transparent;
+    color:#fff;
+    border:2px solid #fff;
+    border-radius:10px;
+    padding:5px;
+    box-shadow: 0 0 3px black;
+}
+
+#open-btn:hover{
+    background-color: #fff;
+    color:black;
+}
