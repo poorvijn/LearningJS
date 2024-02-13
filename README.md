@@ -1,1 +1,3 @@
-Learning Javascript using Akshay Saini's playlists on Youtube !
+Learning Javascript using Akshay Saini's playlists on Youtube !  
+Also learning about DOM Manipulation, with 5 basic projects from this video:  
+[DOM Manipulation](https://youtu.be/5fb2aPlgoys?si=9j7Gl7zlz0tZP6bG)
